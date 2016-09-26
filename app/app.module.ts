@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { HttpModule } from '@angular/http';
 import {
   LocationStrategy,
   HashLocationStrategy,
@@ -9,7 +10,7 @@ import appRoutes from './app.routes';
 import { AppComponent }   from './app.component';
 
 @NgModule({
-  imports: [ BrowserModule, appRoutes ],
+  imports: [ BrowserModule, HttpModule, appRoutes ],
   declarations: [ AppComponent ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
   bootstrap: [ AppComponent ]

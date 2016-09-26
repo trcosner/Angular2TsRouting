@@ -11,6 +11,6 @@ export class ProjectComponent{
   id;
 
   constructor(private route:ActivatedRoute){
-    this.id = route.params.map((p: any) => p.id);
+    this.id= route.params.map((p: any) => p.id);
   }
 }

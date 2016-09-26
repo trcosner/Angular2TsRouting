@@ -3,25 +3,20 @@ import { Component } from '@angular/core';
   selector: 'my-app',
   template: `
   <nav>
-    <a
-      routerLink=""
+    <a *ngFor="let nav of navs"
+      [routerLink]="nav.url"
       routerLinkActive="active"
       [routerLinkActiveOptions]="{exact: true}"
-      >Home
-    </a>
-    <a
-      routerLink="about"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{exact: true}"
-      >About
-    </a>
-    <a
-      routerLink="projects/1"
-      routerLinkActive="active"
-      >Project1
+      >{{nav.content}}
     </a>
   </nav>
     <router-outlet></router-outlet>
   `
 })
-export class AppComponent { }
+export class AppComponent {
+  navs = [
+    {url: '', content: 'Home'},
+    {url: 'about', content: 'About'},
+    {url: 'projects', content: 'Projects'}
+  ]
+}
